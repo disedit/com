@@ -1,0 +1,19 @@
+@font-face {
+  font-family: "obviously-narrow";
+  src:
+    url("../fonts/obviously-narrow-bold.woff2") format("woff2"),
+    url("../fonts/obviously-narrow-bold.woff") format("woff");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "obviously-wide";
+  src:
+    url("../fonts/obviously-wide-bold.woff2") format("woff2"),
+    url("../fonts/obviously-wide-bold.woff") format("woff");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 700;
+}
