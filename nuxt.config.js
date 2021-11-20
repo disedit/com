@@ -20,7 +20,7 @@ export default {
   css: ['~/assets/sass/global.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: ['~/plugins/api.js'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -50,6 +50,17 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  // Router
+  router: {
+    extendRoutes(routes, resolve) {
+      routes.push({
+        name: 'pages',
+        path: '*',
+        component: resolve(__dirname, 'pages/page.vue'),
+      })
+    },
+  },
 
   // Style resources
   styleResources: {
