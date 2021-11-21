@@ -1,7 +1,5 @@
 <template>
-  <div>
-    Artistes
-
+  <div class="artists">
     <ul>
       <li v-for="artist in artists" :key="artist.id">
         <nuxt-link :to="`artistes/${artist.slug}`">
@@ -25,3 +23,9 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.artists {
+  background: $primary;
+}
+</style>

@@ -65,7 +65,7 @@ export default {
   // Style resources
   styleResources: {
     // your settings here
-    sass: [
+    scss: [
       './assets/sass/_variables.scss',
       'bootstrap/scss/_functions.scss',
       'bootstrap/scss/_variables.scss',

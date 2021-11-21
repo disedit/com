@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <header class="banners">
     <ul>
       <li v-for="banner in banners" :key="banner.id">
         <a :href="banner.acf.link.url" :target="banner.acf.link.target">
-          <img :src="image(banner)" :alt="altText(banner)" />
+          <img :src="image(banner)" :alt="altText(banner)" width="100%" />
           <h3>{{ banner.acf.title }}</h3>
           <p>
             {{ banner.acf.text }}
@@ -11,7 +11,7 @@
         </a>
       </li>
     </ul>
-  </div>
+  </header>
 </template>
 
 <script>
@@ -27,3 +27,10 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.banners {
+  background: $black;
+  min-height: calc(100vh - 2rem);
+}
+</style>

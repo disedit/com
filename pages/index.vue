@@ -1,10 +1,7 @@
 <template>
-  <div class="container">
-    <h2 class="heading-narrow">Banners</h2>
+  <div>
     <com-banners :banners="banners" />
-    <h2 class="heading-narrow">Artistes</h2>
     <com-artists :artists="artists" />
-    <h2>Notícies</h2>
     <com-posts :posts="posts" />
     <nuxt-link to="/noticies">Notícies</nuxt-link>
   </div>
