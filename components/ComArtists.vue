@@ -1,6 +1,5 @@
 <template>
-  <div :class="['artists', { hovering }]">
-    <div class="artists-background" :style="{ backgroundImage }" />
+  <section :class="['artists', { hovering }]">
     <div class="container-lg">
       <h2 class="artists-title">Artistes</h2>
       <div
@@ -27,7 +26,16 @@
         </ul>
       </div>
     </div>
-  </div>
+    <div
+      v-for="artist in artists"
+      :key="artist.id"
+      :class="[
+        'artists-background',
+        { hovering: hovering && hovering.id === artist.id },
+      ]"
+      :style="{ backgroundImage: `url(${image(artist)})` }"
+    />
+  </section>
 </template>
 
 <script>
@@ -62,10 +70,6 @@ export default {
         artists,
       }))
     },
-
-    backgroundImage() {
-      return this.hovering ? `url(${this.image(this.hovering)})` : null
-    },
   },
 }
 </script>
@@ -82,6 +86,7 @@ export default {
     font-size: 1.25rem;
     margin-bottom: 2rem;
     transition: 0.25s ease;
+    will-change: opacity;
   }
 
   .container-lg {
@@ -95,6 +100,7 @@ export default {
     h3 {
       font-size: 1.25rem;
       transition: 0.25s ease;
+      will-change: opacity;
     }
   }
 
@@ -113,6 +119,7 @@ export default {
         font-family: $font-family-headings-wide;
         text-decoration: none;
         transition: 0.25s ease;
+        will-change: opacity;
       }
 
       &:not(:last-child)::after {
@@ -136,6 +143,11 @@ export default {
     background-size: cover;
     filter: grayscale(1);
     mix-blend-mode: multiply;
+    will-change: opacity;
+
+    &.hovering {
+      opacity: 1;
+    }
   }
 
   &.hovering {
@@ -143,10 +155,6 @@ export default {
     .artists-letter h3,
     .artists-title {
       opacity: 0.25;
-    }
-
-    .artists-background {
-      opacity: 1;
     }
   }
 }
