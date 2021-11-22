@@ -21,6 +21,8 @@ class API {
     return this._call('get', 'pages', {
       parent: process.env.NUXT_ENV_ARTISTS_PAGE_ID,
       _fields: 'id,title,slug,_links.wp:featuredmedia,_embedded',
+      orderby: 'title',
+      order: 'asc',
       _embed: 'wp:featuredmedia',
     })
   }

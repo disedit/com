@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <main class="artists-page">
     <com-artists :artists="artists" />
-  </div>
+  </main>
 </template>
 
 <script>
@@ -12,3 +12,9 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.artists {
+  padding-top: $navbar-safe-area;
+}
+</style>

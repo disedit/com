@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <main class="home">
     <com-banners :banners="banners" />
     <com-artists :artists="artists" />
     <com-posts :posts="posts" />
     <nuxt-link to="/noticies">Notícies</nuxt-link>
-  </div>
+  </main>
 </template>
 
 <script>
