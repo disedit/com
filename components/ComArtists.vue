@@ -79,7 +79,7 @@ export default {
   position: relative;
   background: $primary;
   min-height: 100vh;
-  padding: 4vh 0;
+  padding: 10vh 0;
   color: $white;
 
   &-title {

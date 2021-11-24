@@ -16,7 +16,7 @@
             'hamburger--elastic',
             { 'is-active': expanded },
           ]"
-          @click="expanded = !expanded"
+          @click="toggleExpanded"
         >
           <span class="hamburger-box">
             <span class="hamburger-inner"></span>
@@ -69,6 +69,16 @@ export default {
     handleScroll() {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop
       this.scrolled = scrollTop > 0
+    },
+
+    toggleExpanded() {
+      this.expanded = !this.expanded
+
+      if (this.expanded) {
+        document.body.classList.add('nav-expanded')
+      } else {
+        document.body.classList.remove('nav-expanded')
+      }
     },
   },
 }
@@ -128,8 +138,13 @@ export default {
     }
   }
 
+  &.expanded {
+    height: 100vh;
+  }
+
   &.scrolled {
-    background: $primary;
+    background: rgba($primary, 0.9);
+    backdrop-filter: blur(10px);
 
     .nav {
       &-logo {
@@ -149,6 +164,8 @@ export default {
 
 @include media-breakpoint-down(lg) {
   .nav {
+    height: 3.5rem;
+
     &-logo {
       img {
         height: 2.5rem;
@@ -170,7 +187,6 @@ export default {
       right: 0;
       bottom: 0;
       padding: 1rem;
-      background: rgba($primary, 0.75);
       z-index: 900;
       transition: 0.2s ease;
 
@@ -233,7 +249,7 @@ export default {
     }
 
     &.expanded {
-      background: $primary;
+      background: rgba($primary, 0.9);
     }
 
     .container {
