@@ -76,10 +76,11 @@ export default {
   // Goolge Fonts
   googleFonts: {
     families: {
-      Manrope: {
-        wght: [500, 800],
-        ital: [500],
+      Outfit: {
+        wght: [400, 700],
+        ital: [400],
       },
+      Inter: [400, 700],
     },
   },
 

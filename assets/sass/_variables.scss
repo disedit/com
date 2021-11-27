@@ -5,7 +5,7 @@ $red: #be1f30;
 $primary: $red;
 
 // Typography
-$font-family-sans-serif: manrope, sans-serif;
+$font-family-sans-serif: inter, sans-serif;
 $font-family-headings-wide: 'obviously-wide', sans-serif;
 $font-family-headings-narrow: 'obviously-narrow', sans-serif;
 
@@ -22,4 +22,5 @@ $hamburger-layer-height: 2px;
 $brand-radius: 3rem 3rem 3rem 0;
 
 // Navbar
+$navbar-safe-area: 7.5em;
 $navbar-safe-area-loose: 12rem;

@@ -24,18 +24,30 @@
       <div class="nav-menu">
         <ul class="nav-menu-items">
           <li v-for="item in menu.items" :key="item.id">
-            <nuxt-link :to="`/${item.object_slug}`">{{ item.title }}</nuxt-link>
+            <nuxt-link :to="`/${item.object_slug}`" @click="toggleExpanded">{{
+              item.title
+            }}</nuxt-link>
           </li>
         </ul>
         <ul class="nav-menu-social">
           <li>
-            <a href="" title="Facebook"><fa :icon="['fab', 'facebook']" /></a>
+            <a
+              href="https://www.facebook.com/collectiu.montllor/"
+              title="Facebook"
+              target="_blank"
+              rel="noopener"
+              ><fa :icon="['fab', 'facebook']"
+            /></a>
           </li>
           <li>
-            <a href="" title="Twitter"><fa :icon="['fab', 'twitter']" /></a>
+            <a href="" title="Twitter" target="_blank" rel="noopener"
+              ><fa :icon="['fab', 'twitter']"
+            /></a>
           </li>
           <li>
-            <a href="" title="Instagram"><fa :icon="['fab', 'instagram']" /></a>
+            <a href="" title="Instagram" target="_blank" rel="noopener"
+              ><fa :icon="['fab', 'instagram']"
+            /></a>
           </li>
         </ul>
       </div>
@@ -107,13 +119,12 @@ export default {
 
   &-menu {
     display: flex;
-    align-items: stretch;
+    align-items: center;
 
     &-items,
     &-social {
       display: flex;
       list-style: none;
-      margin: 1.5rem 0;
       padding: 0;
       transition: 0.25s ease;
 
@@ -123,12 +134,13 @@ export default {
         color: $white;
         text-decoration: none;
         font-size: 1.25rem;
-        padding: 0.25rem 1rem;
+        padding: 1.12rem 1rem;
         line-height: 1;
-        transition: 0.25s ease;
+        border-radius: 0.5rem 0.5rem 0.5rem 0;
 
         &:hover {
-          background: rgba($black, 0.25);
+          background: $white;
+          color: $primary;
         }
       }
     }
@@ -163,6 +175,10 @@ export default {
       &-menu-items,
       &-menu-social {
         margin: 0;
+
+        a {
+          border-radius: 0;
+        }
       }
     }
   }
