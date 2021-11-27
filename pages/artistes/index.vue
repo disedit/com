@@ -15,6 +15,6 @@ export default {
 
 <style lang="scss" scoped>
 .artists {
-  padding-top: $navbar-safe-area;
+  padding-top: $navbar-safe-area-loose;
 }
 </style>

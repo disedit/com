@@ -47,7 +47,7 @@ export default {
 
   methods: {
     handleBannerClick(e) {
-      console.log('click')
+      return false
     },
   },
 }

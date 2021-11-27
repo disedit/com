@@ -1,26 +1,30 @@
 <template>
-  <div>
-    <p v-if="$fetchState.pending">Fetching mountains...</p>
-    <div v-else>
-      <h2>Noticies</h2>
-      <com-posts :posts="posts" />
-
-      <com-paginator
-        base="/noticies"
-        :current-page="currentPage"
-        :total-pages="totalPages"
-      />
-
-      <h2>Categories</h2>
-      <ul>
-        <li v-for="category in categories" :key="category.id">
-          <nuxt-link :to="'/noticies/?category=' + category.id">
-            {{ category.name }}
-          </nuxt-link>
-        </li>
-      </ul>
+  <main class="posts-archive">
+    <com-title oversized-bottom>Notícies</com-title>
+    <div class="container-lg">
+      <div v-if="!$fetchState.pending" class="row">
+        <div class="col-md-8">
+          <com-posts :posts="posts" layout="vertical" />
+          <com-paginator
+            base="/noticies"
+            :current-page="currentPage"
+            :total-pages="totalPages"
+          />
+        </div>
+        <div class="col-md-4">
+          <h2>Categories</h2>
+          <ul>
+            <li v-for="category in categories" :key="category.id">
+              <nuxt-link :to="'/noticies/?category=' + category.id">
+                {{ category.name }}
+              </nuxt-link>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div v-else>Carregant...</div>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>
