@@ -3,10 +3,7 @@
     <div class="container-lg d-flex align-items-stretch">
       <div class="nav-logo">
         <nuxt-link to="/">
-          <img
-            src="https://via.placeholder.com/200x100"
-            alt="Col·lectiu Ovidi Montllor"
-          />
+          <com-logo />
         </nuxt-link>
       </div>
       <div class="nav-burger d-lg-none">
@@ -96,11 +93,15 @@ export default {
   &-logo {
     margin-right: auto;
 
-    img {
+    svg {
       display: block;
       transition: 0.25s ease;
-      height: 4.5rem;
-      margin: 0.75rem 0;
+      height: 5.5rem;
+      margin: 1rem 0;
+
+      &::v-deep .long-name {
+        transition: 0.25s ease;
+      }
     }
   }
 
@@ -112,7 +113,7 @@ export default {
     &-social {
       display: flex;
       list-style: none;
-      margin: 0.75rem 0;
+      margin: 1.5rem 0;
       padding: 0;
       transition: 0.25s ease;
 
@@ -148,9 +149,14 @@ export default {
 
     .nav {
       &-logo {
-        img {
+        svg {
           height: 2.5rem;
           margin: 0.5rem 0;
+          transform: translateY(0.25rem);
+
+          &::v-deep .long-name {
+            opacity: 0;
+          }
         }
       }
 
@@ -167,9 +173,14 @@ export default {
     height: 3.5rem;
 
     &-logo {
-      img {
+      svg {
         height: 2.5rem;
         margin: 0.5rem 0;
+        transform: translateY(0.25rem);
+
+        &::v-deep .long-name {
+          opacity: 0;
+        }
       }
     }
 
