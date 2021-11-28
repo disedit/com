@@ -41,6 +41,7 @@ export default {
 
     h2 {
       font-family: $font-family-headings-wide;
+      font-weight: bold;
     }
   }
 }

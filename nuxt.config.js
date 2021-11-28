@@ -33,8 +33,6 @@ export default {
     '@nuxtjs/stylelint-module',
     // https://www.npmjs.com/package/@nuxtjs/style-resources
     '@nuxtjs/style-resources',
-    // https://www.npmjs.com/package/@nuxtjs/google-fonts
-    '@nuxtjs/google-fonts',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -71,17 +69,6 @@ export default {
       'bootstrap/scss/_variables.scss',
       'bootstrap/scss/_mixins.scss',
     ],
-  },
-
-  // Goolge Fonts
-  googleFonts: {
-    families: {
-      Outfit: {
-        wght: [400, 700],
-        ital: [400],
-      },
-      Inter: [400, 700],
-    },
   },
 
   // Fontawesome

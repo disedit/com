@@ -117,6 +117,7 @@ export default {
       a {
         color: $white;
         font-family: $font-family-headings-wide;
+        font-weight: bold;
         text-decoration: none;
         transition: 0.25s ease;
         will-change: opacity;

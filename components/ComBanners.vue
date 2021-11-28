@@ -78,6 +78,7 @@ export default {
 
     h3 {
       font-family: $font-family-headings-wide;
+      font-weight: bold;
       font-size: calc(1.5rem + 1.75vw);
       line-height: 1.1;
       margin-bottom: 1rem;
@@ -141,7 +142,7 @@ export default {
 
   .banner-image {
     img {
-      border-radius: 4.5rem 4.5rem 4.5rem 0;
+      border-radius: 15% 15% 15% 0;
       aspect-ratio: 1 / 1;
       object-fit: cover;
     }

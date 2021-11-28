@@ -24,7 +24,7 @@
       <div class="nav-menu">
         <ul class="nav-menu-items">
           <li v-for="item in menu.items" :key="item.id">
-            <nuxt-link :to="`/${item.object_slug}`" @click="toggleExpanded">{{
+            <nuxt-link :to="`/${item.object_slug}`" @click="handleNavClick">{{
               item.title
             }}</nuxt-link>
           </li>
@@ -78,6 +78,10 @@ export default {
     handleScroll() {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop
       this.scrolled = scrollTop > 0
+    },
+
+    handleNavClick() {
+      console.log('nav')
     },
 
     toggleExpanded() {
@@ -137,12 +141,17 @@ export default {
         padding: 1.12rem 1rem;
         line-height: 1;
         border-radius: 0.5rem 0.5rem 0.5rem 0;
+        transition: border-radius 0.25s ease;
 
         &:hover {
           background: $white;
           color: $primary;
         }
       }
+    }
+
+    &-items a {
+      padding: 0.94rem 1rem 1.3rem 1rem;
     }
 
     li {
@@ -234,6 +243,7 @@ export default {
         a {
           color: $black;
           font-family: $font-family-headings-wide;
+          font-weight: bold;
           font-size: 1.5rem;
           padding: 0.75rem 1rem;
           flex-grow: 1;

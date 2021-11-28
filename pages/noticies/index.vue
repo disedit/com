@@ -64,3 +64,9 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.posts-archive {
+  margin-bottom: 2rem;
+}
+</style>

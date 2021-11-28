@@ -73,10 +73,12 @@ export default {
 
     &-title {
       font-family: $font-family-headings-wide;
+      font-weight: bold;
     }
 
     &-date {
       opacity: 0.5;
+      font-size: 0.85rem;
     }
   }
 
@@ -92,7 +94,7 @@ export default {
   &-horizontal {
     .post {
       &-details {
-        margin-top: 1rem;
+        margin-top: 0.5rem;
       }
     }
   }
@@ -115,6 +117,11 @@ export default {
         -webkit-line-clamp: 4;
         -webkit-box-orient: vertical;
         overflow: hidden;
+      }
+
+      @include media-breakpoint-down(md) {
+        grid-template-columns: 1fr;
+        gap: 1rem;
       }
     }
   }

@@ -29,6 +29,11 @@ export default {
   h2 {
     font-family: $font-family-headings-wide;
     font-size: 3rem;
+    font-weight: bold;
+
+    @include media-breakpoint-down(md) {
+      font-size: 2.25rem;
+    }
   }
 
   &.oversized-bottom {

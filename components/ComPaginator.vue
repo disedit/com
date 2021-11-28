@@ -1,14 +1,16 @@
 <template>
-  <div>
+  <div class="paginator">
     <nuxt-link
       v-if="currentPage > 1"
       :to="`${base}?page=${prevPage}${category}`"
-      >Prev</nuxt-link
+      class="prev"
+      >&lt; Notícies més recents</nuxt-link
     >
     <nuxt-link
       v-if="currentPage < totalPages"
       :to="`${base}?page=${nextPage}${category}`"
-      >Next</nuxt-link
+      class="next"
+      >Notícies anteriors &gt;</nuxt-link
     >
   </div>
 </template>
@@ -49,3 +51,13 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.paginator {
+  display: flex;
+
+  .next {
+    margin-left: auto;
+  }
+}
+</style>
