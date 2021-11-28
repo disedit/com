@@ -83,7 +83,7 @@ export default {
   methods: {
     handleScroll() {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop
-      this.scrolled = scrollTop > 0
+      this.scrolled = scrollTop > 125
     },
   },
 }
@@ -112,8 +112,7 @@ export default {
     position: absolute;
     left: 0;
     right: 0;
-    top: 3.5rem;
-    transition: 0.25s ease;
+    top: 0;
     z-index: 10;
 
     .artist-section {
@@ -127,11 +126,6 @@ export default {
   }
 
   &-mock {
-    &::before {
-      content: '';
-      display: block;
-      height: 3.5rem;
-    }
     .artist-name,
     .artist-section {
       visibility: hidden;
@@ -142,6 +136,7 @@ export default {
     .artist {
       &-title {
         position: fixed;
+        top: 3.5rem;
         background: rgba($primary, 0.9);
         backdrop-filter: blur(10px);
         padding: 0.5rem 0;
@@ -166,19 +161,20 @@ export default {
   &-info {
     grid-row: 1 / 2;
     grid-column: 2 / 3;
-    transform: translateY(-15rem);
+    transform: translateY(-10rem);
     position: relative;
     z-index: 10;
   }
 
   &-picture {
     position: sticky;
-    top: 19rem;
+    top: 14rem;
+    z-index: 10000;
 
     img {
       width: 100%;
       aspect-ratio: 1 / 1;
-      border-radius: 15% 15% 15% 0;
+      border-radius: 10% 10% 10% 0;
       object-fit: cover;
       object-position: center;
     }
