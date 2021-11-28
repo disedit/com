@@ -1,9 +1,9 @@
 <template>
   <header :class="['com-title', { 'oversized-bottom': oversizedBottom }]">
     <div class="container-lg">
-      <h2>
+      <h1>
         <slot />
-      </h2>
+      </h1>
     </div>
   </header>
 </template>
@@ -26,7 +26,7 @@ export default {
   padding-top: $navbar-safe-area-loose;
   padding-bottom: 2rem;
 
-  h2 {
+  h1 {
     font-family: $font-family-headings-wide;
     font-size: 3rem;
     font-weight: bold;

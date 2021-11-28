@@ -142,6 +142,7 @@ export default {
     opacity: 0;
     background-attachment: fixed;
     background-size: cover;
+    background-position: center;
     filter: grayscale(1);
     mix-blend-mode: multiply;
     will-change: opacity;
