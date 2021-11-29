@@ -3,7 +3,7 @@
     <com-title class="artist-title">
       <template #overtitle
         ><nuxt-link to="/artistes" class="artist-section"
-          >Artistes /</nuxt-link
+          >Artistes</nuxt-link
         ></template
       >
       <div class="artist-name" v-html="artist.title.rendered" />

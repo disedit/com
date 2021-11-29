@@ -2,7 +2,12 @@
   <article class="article">
     <com-title class="article-title">
       <template #overtitle>
-        <nuxt-link to="/noticies">Notícies /</nuxt-link>
+        <nuxt-link to="/noticies"
+          >Notícies /
+          <time class="article-date">{{
+            article.date | formatDate
+          }}</time></nuxt-link
+        >
       </template>
       <span v-html="article.title.rendered" />
     </com-title>
@@ -21,9 +26,16 @@
 
 <script>
 import he from 'he'
+import dayjs from 'dayjs'
+import 'dayjs/locale/ca'
 import UtilsMixin from '@/mixins/utils-mixin'
 
 export default {
+  filters: {
+    formatDate(date) {
+      return dayjs(date).locale('ca').format('D MMMM YYYY')
+    },
+  },
   mixins: [UtilsMixin],
 
   async asyncData({ $api, params }) {
@@ -83,6 +95,10 @@ export default {
     &::v-deep p {
       max-width: 60ch;
     }
+  }
+
+  &-date {
+    text-transform: lowercase;
   }
 }
 

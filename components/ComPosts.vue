@@ -72,13 +72,15 @@ export default {
     }
 
     &-title {
-      font-family: $font-family-headings-wide;
+      font-family: $font-family-sans-serif;
       font-weight: bold;
+      font-size: 1.75rem;
     }
 
     &-date {
       opacity: 0.5;
       font-size: 0.85rem;
+      text-transform: lowercase;
     }
   }
 

@@ -3,7 +3,7 @@
     <com-title oversized-bottom>Notícies</com-title>
     <div class="container-lg">
       <div v-if="!$fetchState.pending" class="row">
-        <section class="col-md-8">
+        <section class="col-md-9">
           <com-posts :posts="posts" layout="vertical" />
           <com-paginator
             base="/noticies"
@@ -11,7 +11,7 @@
             :total-pages="totalPages"
           />
         </section>
-        <aside class="sidebar col-md-4">
+        <aside class="sidebar col-md-3">
           <h2>Categories</h2>
           <ul>
             <li v-for="category in categories" :key="category.id">
@@ -82,7 +82,6 @@ export default {
 
   h2 {
     font-size: 1.25rem;
-    font-family: $font-family-headings-wide;
     font-weight: bold;
   }
 
@@ -90,6 +89,26 @@ export default {
     list-style: none;
     margin: 0;
     padding: 0;
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+    color: $gray-700;
+    background: $gray-100;
+    border-radius: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    transition: 0.25s ease;
+
+    &:hover {
+      background: $gray-200;
+      color: $gray-800;
+    }
+
+    &.nuxt-link-exact-active {
+      background: $primary;
+      color: $white;
+    }
   }
 }
 

@@ -42,13 +42,21 @@
             /></a>
           </li>
           <li>
-            <a href="" title="Twitter" target="_blank" rel="noopener"
+            <a
+              href="https://twitter.com/premisovidi"
+              title="Twitter"
+              target="_blank"
+              rel="noopener"
               ><fa :icon="['fab', 'twitter']"
             /></a>
           </li>
           <li>
-            <a href="" title="Instagram" target="_blank" rel="noopener"
-              ><fa :icon="['fab', 'instagram']"
+            <a
+              href="https://www.youtube.com/user/elCanaldelCOM"
+              title="Youtube"
+              target="_blank"
+              rel="noopener"
+              ><fa :icon="['fab', 'youtube']"
             /></a>
           </li>
         </ul>
