@@ -10,6 +10,12 @@ export default {
     const { data: artists } = await $api.artists()
     return { artists }
   },
+
+  head() {
+    return {
+      title: 'Artistes - Col·lectiu Ovidi Montllor',
+    }
+  },
 }
 </script>
 

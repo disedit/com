@@ -20,6 +20,7 @@
 </template>
 
 <script>
+import he from 'he'
 import UtilsMixin from '@/mixins/utils-mixin'
 
 export default {
@@ -28,6 +29,14 @@ export default {
   async asyncData({ $api, params }) {
     const { data: article } = await $api.post(params.article)
     return { article: article[0] }
+  },
+
+  head() {
+    return {
+      title: `${he.decode(
+        this.article.title.rendered
+      )} - Col·lectiu Ovidi Montllor`,
+    }
   },
 }
 </script>

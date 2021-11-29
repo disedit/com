@@ -17,3 +17,13 @@
   font-style: normal;
   font-weight: 700;
 }
+
+@font-face {
+  font-family: "obviously";
+  src:
+    url("../fonts/obviously-black.woff2") format("woff2"),
+    url("../fonts/obviously-black.woff") format("woff");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 700;
+}

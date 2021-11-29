@@ -53,6 +53,12 @@ export default {
     this.totalPages = posts.headers['x-wp-totalpages']
   },
 
+  head() {
+    return {
+      title: 'Notícies - Col·lectiu Ovidi Montllor',
+    }
+  },
+
   computed: {
     currentPage() {
       return this.$route.query.page || 1

@@ -92,6 +92,7 @@
 </template>
 
 <script>
+import he from 'he'
 import UtilsMixin from '@/mixins/utils-mixin'
 
 export default {
@@ -105,6 +106,14 @@ export default {
   data() {
     return {
       scrolled: false,
+    }
+  },
+
+  head() {
+    return {
+      title: `${he.decode(
+        this.artist.title.rendered
+      )} - Col·lectiu Ovidi Montllor`,
     }
   },
 
