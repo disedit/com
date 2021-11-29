@@ -253,25 +253,35 @@ export default {
 }
 
 @include media-breakpoint-down(xl) {
-  ::v-deep .com-title {
-    padding-bottom: 10rem;
-  }
-
   .artist {
     &-container {
       grid-template-columns: 1fr;
+      gap: 0;
     }
 
     &-content {
       grid-row: 2 / 2;
       grid-column: 1 / 1;
+      padding: 0;
     }
 
     &-info {
       grid-row: 1 / 1;
       grid-column: 1 / 1;
       transform: translateY(0);
-      margin-top: -9rem;
+      margin-top: 0;
+      z-index: 1;
+
+      &::before {
+        content: '';
+        display: block;
+        background: $primary;
+        position: absolute;
+        top: 0;
+        left: -0.75rem;
+        right: -0.75rem;
+        height: 3rem;
+      }
     }
 
     &-picture {

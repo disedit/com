@@ -93,7 +93,9 @@ export default {
 
   &-horizontal {
     .post {
-      max-width: 300px;
+      @include media-breakpoint-up(sm) {
+        max-width: 300px;
+      }
 
       &-details {
         margin-top: 0.5rem;
