@@ -3,15 +3,15 @@
     <com-title oversized-bottom>Notícies</com-title>
     <div class="container-lg">
       <div v-if="!$fetchState.pending" class="row">
-        <div class="col-md-8">
+        <section class="col-md-8">
           <com-posts :posts="posts" layout="vertical" />
           <com-paginator
             base="/noticies"
             :current-page="currentPage"
             :total-pages="totalPages"
           />
-        </div>
-        <div class="col-md-4">
+        </section>
+        <aside class="sidebar col-md-4">
           <h2>Categories</h2>
           <ul>
             <li v-for="category in categories" :key="category.id">
@@ -20,9 +20,9 @@
               </nuxt-link>
             </li>
           </ul>
-        </div>
+        </aside>
       </div>
-      <div v-else>Carregant...</div>
+      <div v-else class="loading">Carregant...</div>
     </div>
   </main>
 </template>
@@ -68,5 +68,28 @@ export default {
 <style lang="scss" scoped>
 .posts-archive {
   margin-bottom: 2rem;
+  background: $white;
+}
+
+.sidebar {
+  padding-top: 2rem;
+
+  h2 {
+    font-size: 1.25rem;
+    font-family: $font-family-headings-wide;
+    font-weight: bold;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.loading {
+  font-size: 4rem;
+  opacity: 0.25;
+  padding: 2rem 0;
 }
 </style>

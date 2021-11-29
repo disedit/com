@@ -4,6 +4,10 @@
 @import 'utils';
 @import "../../node_modules/hamburgers/_sass/hamburgers/hamburgers";
 
+body {
+  background: $black;
+}
+
 .nav-expanded {
   overflow: hidden;
 }

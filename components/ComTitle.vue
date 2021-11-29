@@ -1,6 +1,9 @@
 <template>
   <header :class="['com-title', { 'oversized-bottom': oversizedBottom }]">
     <div class="container-lg">
+      <div class="overtitle">
+        <slot name="overtitle" />
+      </div>
       <h1>
         <slot />
       </h1>
@@ -28,7 +31,7 @@ export default {
 
   h1 {
     font-family: $font-family-headings-wide;
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: bold;
 
     @include media-breakpoint-down(md) {
@@ -38,6 +41,25 @@ export default {
 
   &.oversized-bottom {
     padding-bottom: 6rem;
+  }
+
+  .overtitle {
+    position: relative;
+    z-index: 20;
+    color: $black;
+    font-family: $font-family-headings-wide;
+    font-weight: bold;
+    font-size: 1.15rem;
+
+    &::v-deep a {
+      color: inherit;
+      display: block;
+      text-decoration: none;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
   }
 }
 </style>

@@ -7,11 +7,7 @@
           :key="banner.id"
           :class="['banner', `banner-${banner.acf.type}`]"
         >
-          <a
-            :href="banner.acf.link.url"
-            :target="banner.acf.link.target"
-            @click.prevent="handleBannerClick($event)"
-          >
+          <a :href="banner.acf.link.url" :target="banner.acf.link.target">
             <div class="banner-container container-lg">
               <div class="banner-text">
                 <div class="container-lg">
@@ -42,12 +38,6 @@ export default {
     banners: {
       type: Array,
       required: true,
-    },
-  },
-
-  methods: {
-    handleBannerClick(e) {
-      return false
     },
   },
 }

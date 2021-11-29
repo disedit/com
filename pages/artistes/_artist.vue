@@ -1,11 +1,19 @@
 <template>
   <main :class="['artist', { scrolled }]">
     <com-title class="artist-title">
-      <nuxt-link to="/artistes" class="artist-section">Artistes /</nuxt-link>
+      <template #overtitle
+        ><nuxt-link to="/artistes" class="artist-section"
+          >Artistes /</nuxt-link
+        ></template
+      >
       <div class="artist-name" v-html="artist.title.rendered" />
     </com-title>
     <com-title class="artist-mock" aria-hidden="true">
-      <nuxt-link to="/artistes" class="artist-section">Artistes /</nuxt-link>
+      <template #overtitle
+        ><nuxt-link to="/artistes" class="artist-section"
+          >Artistes /</nuxt-link
+        ></template
+      >
       <div class="artist-name" v-html="artist.title.rendered" />
     </com-title>
     <div class="artist-container container-lg">
@@ -13,33 +21,63 @@
         <div class="artist-picture">
           <img :src="image(artist)" alt="" />
           <ul class="artist-social">
-            <li>
-              <a :href="artist.acf.website" title="Pàgina web">
+            <li v-if="artist.acf.website">
+              <a
+                :href="artist.acf.website"
+                title="Pàgina web"
+                target="_blank"
+                rel="noopener"
+              >
                 <fa :icon="['far', 'globe']" />
               </a>
             </li>
-            <li>
-              <a :href="artist.acf.spotify" title="Spotify">
+            <li v-if="artist.acf.spotify">
+              <a
+                :href="artist.acf.spotify"
+                title="Spotify"
+                target="_blank"
+                rel="noopener"
+              >
                 <fa :icon="['fab', 'spotify']" />
               </a>
             </li>
-            <li>
-              <a :href="artist.acf.instagram" title="Instagram">
+            <li v-if="artist.acf.instagram">
+              <a
+                :href="artist.acf.instagram"
+                title="Instagram"
+                target="_blank"
+                rel="noopener"
+              >
                 <fa :icon="['fab', 'instagram']" />
               </a>
             </li>
-            <li>
-              <a :href="artist.acf.facebook" title="Twitter">
+            <li v-if="artist.acf.twitter">
+              <a
+                :href="artist.acf.twitter"
+                title="Twitter"
+                target="_blank"
+                rel="noopener"
+              >
                 <fa :icon="['fab', 'twitter']" />
               </a>
             </li>
-            <li>
-              <a :href="artist.acf.facebook" title="Facebook">
+            <li v-if="artist.acf.facebook">
+              <a
+                :href="artist.acf.facebook"
+                title="Facebook"
+                target="_blank"
+                rel="noopener"
+              >
                 <fa :icon="['fab', 'facebook']" />
               </a>
             </li>
-            <li>
-              <a :href="artist.acf.youtube" title="YouTube">
+            <li v-if="artist.acf.youtube">
+              <a
+                :href="artist.acf.youtube"
+                title="YouTube"
+                target="_blank"
+                rel="noopener"
+              >
                 <fa :icon="['fab', 'youtube']" />
               </a>
             </li>
@@ -47,12 +85,6 @@
         </div>
       </div>
       <div class="artist-content">
-        <div v-html="artist.content.rendered" />
-        <div v-html="artist.content.rendered" />
-        <div v-html="artist.content.rendered" />
-        <div v-html="artist.content.rendered" />
-        <div v-html="artist.content.rendered" />
-        <div v-html="artist.content.rendered" />
         <div v-html="artist.content.rendered" />
       </div>
     </div>
@@ -92,20 +124,13 @@ export default {
 <style lang="scss" scoped>
 .artist {
   position: relative;
+  background: $white;
 
   &-section {
-    color: $black;
-    font-size: 1rem;
-    display: block;
-    text-decoration: none;
     position: relative;
     overflow: hidden;
     max-height: 1.5rem;
     transition: 0.25s ease;
-
-    &:hover {
-      opacity: 0.5;
-    }
   }
 
   &-title {
@@ -116,7 +141,7 @@ export default {
     z-index: 10;
 
     .artist-section {
-      z-index: 10;
+      z-index: 20;
     }
   }
 
@@ -137,8 +162,7 @@ export default {
       &-title {
         position: fixed;
         top: 3.5rem;
-        background: rgba($primary, 0.9);
-        backdrop-filter: blur(10px);
+        background: $primary;
         padding: 0.5rem 0;
 
         .artist-name {
@@ -184,6 +208,8 @@ export default {
     grid-row: 1 / 2;
     grid-column: 1 / 2;
     padding: 2rem 0;
+    font-size: 1.15rem;
+    line-height: 1.75;
 
     &::v-deep p {
       max-width: 60ch;
@@ -213,6 +239,34 @@ export default {
       &:hover {
         background: $black;
       }
+    }
+  }
+}
+
+@include media-breakpoint-down(xl) {
+  ::v-deep .com-title {
+    padding-bottom: 10rem;
+  }
+
+  .artist {
+    &-container {
+      grid-template-columns: 1fr;
+    }
+
+    &-content {
+      grid-row: 2 / 2;
+      grid-column: 1 / 1;
+    }
+
+    &-info {
+      grid-row: 1 / 1;
+      grid-column: 1 / 1;
+      transform: translateY(0);
+      margin-top: -9rem;
+    }
+
+    &-picture {
+      margin: 0 -0.75rem;
     }
   }
 }

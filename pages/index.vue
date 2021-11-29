@@ -2,15 +2,17 @@
   <main class="home">
     <com-banners :banners="banners" />
     <com-artists :artists="artists" />
-    <div class="home-posts container-lg">
-      <nuxt-link
-        to="/noticies"
-        class="home-posts-title d-flex align-items-baseline mb-4"
-      >
-        <h2>Notícies</h2>
-        <span class="ms-auto opacity-50">Arxiu de notícies</span>
-      </nuxt-link>
-      <com-posts :posts="posts" />
+    <div class="home-posts">
+      <div class="container-lg">
+        <nuxt-link
+          to="/noticies"
+          class="home-posts-title d-flex align-items-baseline mb-4"
+        >
+          <h2>Notícies</h2>
+          <span class="ms-auto opacity-50">Arxiu de notícies</span>
+        </nuxt-link>
+        <com-posts :posts="posts" />
+      </div>
     </div>
   </main>
 </template>
@@ -29,7 +31,8 @@ export default {
 
 <style lang="scss" scoped>
 .home-posts {
-  margin: 8vh auto;
+  padding: 8vh 0;
+  background: $white;
 
   &-title {
     text-decoration: none;

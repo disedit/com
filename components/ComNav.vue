@@ -1,12 +1,12 @@
 <template>
-  <nav :class="['nav', { scrolled, expanded }]">
+  <nav :class="['nav', { scrolled: scrolled || notFrontPage, expanded }]">
     <div class="container-lg d-flex align-items-stretch">
       <div class="nav-logo">
         <nuxt-link to="/">
           <com-logo />
         </nuxt-link>
       </div>
-      <div class="nav-burger d-lg-none">
+      <div class="nav-burger d-xl-none">
         <button
           :class="[
             'hamburger',
@@ -23,10 +23,12 @@
       </div>
       <div class="nav-menu">
         <ul class="nav-menu-items">
-          <li v-for="item in menu.items" :key="item.id">
-            <nuxt-link :to="`/${item.object_slug}`" @click="handleNavClick">{{
-              item.title
-            }}</nuxt-link>
+          <li
+            v-for="item in menu.items"
+            :key="item.id"
+            @click.capture="closeNav"
+          >
+            <nuxt-link :to="`/${item.object_slug}`">{{ item.title }}</nuxt-link>
           </li>
         </ul>
         <ul class="nav-menu-social">
@@ -68,6 +70,10 @@ export default {
     menu() {
       return this.$store.state.menu
     },
+
+    notFrontPage() {
+      return this.$route.name !== 'index'
+    },
   },
 
   mounted() {
@@ -80,11 +86,12 @@ export default {
       this.scrolled = scrollTop > 0
     },
 
-    handleNavClick() {
-      console.log('nav')
+    closeNav() {
+      this.expanded = false
+      document.body.classList.remove('nav-expanded')
     },
 
-    toggleExpanded() {
+    toggleExpanded(state) {
       this.expanded = !this.expanded
 
       if (this.expanded) {
@@ -165,8 +172,7 @@ export default {
   }
 
   &.scrolled {
-    background: rgba($primary, 0.9);
-    backdrop-filter: blur(10px);
+    background: $primary;
 
     .nav {
       &-logo {
@@ -193,7 +199,7 @@ export default {
   }
 }
 
-@include media-breakpoint-down(lg) {
+@include media-breakpoint-down(xl) {
   .nav {
     height: 3.5rem;
 
@@ -286,7 +292,7 @@ export default {
     }
 
     &.expanded {
-      background: rgba($primary, 0.9);
+      background: $primary;
     }
 
     .container {
