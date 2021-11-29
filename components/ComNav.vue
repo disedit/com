@@ -1,5 +1,14 @@
 <template>
-  <nav :class="['nav', { scrolled: scrolled || notFrontPage, expanded }]">
+  <nav
+    :class="[
+      'nav',
+      {
+        scrolled: scrolled || notFrontPage,
+        unscrolled: !scrolled && notFrontPage,
+        expanded,
+      },
+    ]"
+  >
     <div class="container-lg d-flex align-items-stretch">
       <div class="nav-logo">
         <nuxt-link to="/">
@@ -204,6 +213,10 @@ export default {
         }
       }
     }
+  }
+
+  &.unscrolled {
+    background: transparent;
   }
 }
 

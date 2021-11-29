@@ -1,6 +1,6 @@
 <template>
   <main class="page">
-    <com-title>Premis ovidi</com-title>
+    <com-title>Premis Ovidi</com-title>
     <div class="page-container container-lg">
       <span class="construction">Pàgina en construcció</span>
     </div>

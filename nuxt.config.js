@@ -1,18 +1,58 @@
+const title = 'Col·lectiu Ovidi Montllor'
+const description = 'Col·lectiu Ovidi Montllor de música en valencià'
+const keywords =
+  'ovidi, montllor, col·lectiu, música, valencià, premis ovidi, COMcerts'
+const url = 'https://elcom.cat'
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Col·lectiu Ovidi Montllor',
+    title,
     htmlAttrs: {
       lang: 'ca',
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
       { name: 'theme-color', content: '#be1f30' },
+      { hid: 'description', name: 'description', content: description },
+      { hid: 'keywords', name: 'keywords', content: keywords },
+      { hid: 'robots', name: 'robots', content: 'index, follow' },
+      { name: 'format-detection', content: 'telephone=no' },
+      { hid: 'og:locale', property: 'og:locale', content: 'ca' },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: description,
+      },
+      { hid: 'og:image', property: 'og:image', content: url + 'thumbnail.png' },
+      { hid: 'og:url', property: 'og:url', content: url },
+      {
+        hid: 'twitter:site',
+        property: 'twitter:site',
+        content: '@premisovidi',
+      },
+      {
+        hid: 'twitter:card',
+        property: 'twitter:card',
+        content: 'summary_large_image',
+      },
+      { hid: 'twitter:title', property: 'twitter:title', content: title },
+      {
+        hid: 'twitter:description',
+        property: 'twitter:description',
+        content: description,
+      },
+      {
+        hid: 'twitter:image',
+        property: 'twitter:image',
+        content: url + 'ogimage.png',
+      },
+      { hid: 'twitter:url', property: 'twitter:url', content: url },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
