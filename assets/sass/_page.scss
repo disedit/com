@@ -1,0 +1,68 @@
+.text-with-image {
+  display: grid;
+  grid-template-columns: 1fr 600px;
+  gap: 2rem;
+
+  & + .text-with-image {
+    margin-top: 2rem;
+  }
+
+  .text {
+    font-size: 1rem;
+    line-height: 1.75;
+
+    &.highlighted {
+      font-size: 1.15rem;
+    }
+
+    h2 {
+      font-family: $font-family-sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      line-height: 1.5;
+    }
+
+    p + h2 {
+      margin-top: 2rem;
+    }
+  }
+
+  .image {
+    position: relative;
+
+    figure {
+      position: sticky;
+      top: 5rem;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    figcaption {
+      opacity: 0.5;
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+@include media-breakpoint-down(xl) {
+  .text-with-image {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .text-with-image {
+    grid-template-columns: 1fr;
+
+    .image {
+      margin: 0 -0.75rem;
+
+      figcaption {
+        padding: 0 0.75rem;
+      }
+    }
+  }
+}
