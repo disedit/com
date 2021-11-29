@@ -18,13 +18,37 @@
 </template>
 
 <script>
+import UtilsMixin from '@/mixins/utils-mixin'
+
 export default {
+  mixins: [UtilsMixin],
+
   async asyncData({ $api }) {
     const { data: artists } = await $api.artists()
     const { data: banners } = await $api.banners()
     const { data: posts } = await $api.posts({ per_page: 4 })
 
     return { artists, banners, posts }
+  },
+
+  head() {
+    const links = []
+    this.artists.forEach((artist) => {
+      links.push({
+        rel: 'preload',
+        as: 'image',
+        href: this.image(artist),
+      })
+    })
+    return {
+      meta: [
+        {
+          property: 'og:image',
+          content: `https://elcom.cat/thumbnail.png`,
+        },
+        ...links,
+      ],
+    }
   },
 }
 </script>

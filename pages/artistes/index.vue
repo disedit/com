@@ -12,8 +12,23 @@ export default {
   },
 
   head() {
+    const links = []
+    this.artists.forEach((artist) => {
+      links.push({
+        rel: 'preload',
+        as: 'image',
+        href: this.image(artist),
+      })
+    })
     return {
       title: 'Artistes - Col·lectiu Ovidi Montllor',
+      meta: [
+        {
+          property: 'og:image',
+          content: `https://elcom.cat/thumbnail.png`,
+        },
+        ...links,
+      ],
     }
   },
 }
