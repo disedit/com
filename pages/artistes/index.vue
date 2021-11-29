@@ -5,7 +5,11 @@
 </template>
 
 <script>
+import UtilsMixin from '@/mixins/utils-mixin'
+
 export default {
+  mixins: [UtilsMixin],
+
   async asyncData({ $api }) {
     const { data: artists } = await $api.artists()
     return { artists }
