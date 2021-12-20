@@ -148,6 +148,7 @@ export default {
   &-menu {
     display: flex;
     align-items: center;
+    margin-left: 1rem;
 
     &-items,
     &-social {
@@ -160,9 +161,10 @@ export default {
         display: flex;
         align-items: center;
         color: $white;
+        text-align: center;
         text-decoration: none;
         font-size: 1.25rem;
-        padding: 1.12rem 1rem;
+        padding: 1.12rem 0.75rem;
         line-height: 1;
         border-radius: 0.5rem 0.5rem 0.5rem 0;
         transition: border-radius 0.25s ease;
