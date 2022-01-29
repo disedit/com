@@ -20,15 +20,21 @@ class API {
   artists() {
     return this._call('get', 'pages', {
       parent: process.env.NUXT_ENV_ARTISTS_PAGE_ID,
-      _fields: 'id,title,slug,_links.wp:featuredmedia,_embedded',
+      _fields: 'id,title,slug,_links.wp:featuredmedia,_embedded,acf',
       orderby: 'title',
       order: 'asc',
+      per_page: 100,
+      acf_format: 'standard',
       _embed: 'wp:featuredmedia',
     })
   }
 
   page(slug) {
-    return this._call('get', 'pages', { slug, _embed: 'wp:featuredmedia' })
+    return this._call('get', 'pages', {
+      slug,
+      _embed: 'wp:featuredmedia',
+      acf_format: 'standard',
+    })
   }
 
   posts(params) {

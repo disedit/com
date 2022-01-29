@@ -86,6 +86,18 @@
       </div>
       <div class="artist-content">
         <div v-html="artist.content.rendered" />
+        <div class="artist-video embed-responsive embed-responsive-16by9">
+          <iframe
+            class="embed-responsive-item"
+            width="560"
+            height="315"
+            :src="`https://www.youtube.com/embed/${youtubeVideoId}`"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
       </div>
     </div>
   </main>
@@ -117,6 +129,12 @@ export default {
     }
   },
 
+  computed: {
+    youtubeVideoId() {
+      return this.getYoutubeVideoId(this.artist.acf.yt_video)
+    },
+  },
+
   mounted() {
     window.addEventListener('scroll', this.handleScroll)
   },
@@ -125,6 +143,22 @@ export default {
     handleScroll() {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop
       this.scrolled = scrollTop > 125
+    },
+
+    getYoutubeVideoId(url) {
+      let videoId = ''
+      url = url
+        .replace(/(>|<)/gi, '')
+        .split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/)
+
+      if (url[2] !== undefined) {
+        videoId = url[2].split(/[^0-9a-z_-]/i)
+        videoId = videoId[0]
+      } else {
+        videoId = url
+      }
+
+      return videoId
     },
   },
 }
@@ -164,6 +198,10 @@ export default {
     .artist-section {
       visibility: hidden;
     }
+  }
+
+  &-video iframe {
+    border-radius: 1rem;
   }
 
   &.scrolled {
@@ -287,6 +325,31 @@ export default {
     &-picture {
       margin: 0 -0.75rem;
     }
+  }
+}
+
+.embed-responsive {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  margin-top: 2rem;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  &::before {
+    display: block;
+    content: '';
+    padding-top: 56.25%;
   }
 }
 </style>

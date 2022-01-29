@@ -20,10 +20,9 @@ export default {
   },
 
   head() {
+    const title = this.page ? he.decode(this.page.title.rendered) : ''
     return {
-      title: `${he.decode(
-        this.page.title.rendered
-      )} - Col·lectiu Ovidi Montllor`,
+      title: `${title} - Col·lectiu Ovidi Montllor`,
     }
   },
 }
