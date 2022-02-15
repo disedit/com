@@ -86,7 +86,10 @@
       </div>
       <div class="artist-content">
         <div v-html="artist.content.rendered" />
-        <div class="artist-video embed-responsive embed-responsive-16by9">
+        <div
+          v-if="artist.acf.yt_video"
+          class="artist-video embed-responsive embed-responsive-16by9"
+        >
           <iframe
             class="embed-responsive-item"
             width="560"
