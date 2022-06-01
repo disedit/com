@@ -11,12 +11,25 @@
 
       <div class="footer-logo logo-dipval">
         <p>Amb la col·laboració de:</p>
-        <a href="https://dival.es" target="_blank" rel="noopener">
-          <img
-            src="~assets/images/logo-dipval.svg"
-            alt="Diputació de València"
-          />
-        </a>
+        <div>
+          <a href="https://dival.es" target="_blank" rel="noopener">
+            <img
+              src="~assets/images/logo-dipval.svg"
+              alt="Diputació de València"
+            />
+          </a>
+          <a
+            href="https://www.caixapopular.es/"
+            target="_blank"
+            rel="noopener"
+            class="ms-2"
+          >
+            <img
+              src="~assets/images/logo-caixapopular.svg"
+              alt="Caixa Popular"
+            />
+          </a>
+        </div>
       </div>
     </div>
   </footer>

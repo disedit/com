@@ -1,19 +1,15 @@
 <template>
   <main :class="['artist', { scrolled }]">
     <com-title class="artist-title">
-      <template #overtitle
-        ><nuxt-link to="/artistes" class="artist-section"
-          >Artistes</nuxt-link
-        ></template
-      >
+      <template #overtitle>
+        <nuxt-link to="/artistes" class="artist-section">Artistes</nuxt-link>
+      </template>
       <div class="artist-name" v-html="artist.title.rendered" />
     </com-title>
     <com-title class="artist-mock" aria-hidden="true">
-      <template #overtitle
-        ><nuxt-link to="/artistes" class="artist-section"
-          >Artistes /</nuxt-link
-        ></template
-      >
+      <template #overtitle>
+        <nuxt-link to="/artistes" class="artist-section">Artistes /</nuxt-link>
+      </template>
       <div class="artist-name" v-html="artist.title.rendered" />
     </com-title>
     <div class="artist-container container-lg">
