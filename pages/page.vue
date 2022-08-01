@@ -28,13 +28,18 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .page {
   background: $white;
 
   &-container {
     padding-top: 2rem;
     padding-bottom: 2rem;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
   }
 }
 </style>

@@ -133,4 +133,9 @@ export default {
 ::v-deep .com-title h1 {
   max-width: 700px;
 }
+
+::v-deep img {
+  max-width: 100%;
+  height: auto;
+}
 </style>
