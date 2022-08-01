@@ -31,6 +31,12 @@
           </a>
         </div>
       </div>
+
+      <div class="footer-links">
+        <nuxt-link to="/politica-de-privadesa">
+          Política de privadesa
+        </nuxt-link>
+      </div>
     </div>
   </footer>
 </template>
@@ -54,9 +60,19 @@ export default {}
       width: auto;
     }
   }
+
+  &-links {
+    margin-left: auto;
+    align-self: flex-end;
+    text-align: right;
+
+    a {
+      color: $white;
+    }
+  }
 }
 
-@include media-breakpoint-down(sm) {
+@include media-breakpoint-down(md) {
   .footer .container-lg {
     flex-direction: column;
 
