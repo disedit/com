@@ -1,7 +1,6 @@
 <template>
   <main class="home">
     <com-banners :banners="banners" />
-    <com-artists :artists="artists" />
     <div class="home-posts">
       <div class="container-lg">
         <nuxt-link
@@ -14,6 +13,7 @@
         <com-posts :posts="posts" />
       </div>
     </div>
+    <com-artists :artists="artists" />
   </main>
 </template>
 
