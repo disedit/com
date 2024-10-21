@@ -43,6 +43,15 @@
         <ul class="nav-menu-social">
           <li>
             <a
+              href="https://www.instagram.com/eldelcom"
+              title="Instagram"
+              target="_blank"
+              rel="noopener"
+              ><fa :icon="['fab', 'instagram']"
+            /></a>
+          </li>
+          <li>
+            <a
               href="https://www.facebook.com/collectiu.montllor/"
               title="Facebook"
               target="_blank"
