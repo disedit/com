@@ -52,7 +52,8 @@ export default {}
   &-logo {
     margin-right: 4rem;
 
-    img {
+    img,
+    svg {
       height: 4rem;
       width: auto;
     }
