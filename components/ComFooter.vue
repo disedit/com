@@ -3,10 +3,7 @@
     <div class="container-lg d-flex">
       <div class="footer-logo logo-com">
         <p>Una web de:</p>
-        <img
-          src="~assets/images/logo-com.svg"
-          alt="Col·lectiu Ovidi Montllor"
-        />
+        <com-logo />
       </div>
 
       <div class="footer-logo logo-dipval">
