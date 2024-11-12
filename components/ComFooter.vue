@@ -9,12 +9,6 @@
       <div class="footer-logo logo-dipval">
         <p>Amb la col·laboració de:</p>
         <div>
-          <a href="https://dival.es" target="_blank" rel="noopener">
-            <img
-              src="~assets/images/logo-dipval.svg"
-              alt="Diputació de València"
-            />
-          </a>
           <a
             href="https://www.caixapopular.es/"
             target="_blank"

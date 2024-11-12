@@ -47,6 +47,16 @@
                 <fa :icon="['fab', 'instagram']" />
               </a>
             </li>
+            <li v-if="artist.acf.tiktok">
+              <a
+                :href="artist.acf.tiktok"
+                title="TikTok"
+                target="_blank"
+                rel="noopener"
+              >
+                <fa :icon="['fab', 'tiktok']" />
+              </a>
+            </li>
             <li v-if="artist.acf.twitter">
               <a
                 :href="artist.acf.twitter"
