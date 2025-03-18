@@ -131,6 +131,8 @@ export default {
           'faInstagram',
           'faYoutube',
           'faSpotify',
+          'faTiktok',
+          'faApple'
         ],
       },
     ],

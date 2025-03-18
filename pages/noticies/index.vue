@@ -12,14 +12,16 @@
           />
         </section>
         <aside class="sidebar col-md-3">
-          <h2>Categories</h2>
-          <ul>
-            <li v-for="category in categories" :key="category.id">
-              <nuxt-link :to="'/noticies/?category=' + category.id">
-                {{ category.name }}
-              </nuxt-link>
-            </li>
-          </ul>
+          <div class="sidebar-content">
+            <h2>Categories</h2>
+            <ul>
+              <li v-for="category in categories" :key="category.id">
+                <nuxt-link :to="'/noticies/?category=' + category.id">
+                  {{ category.name }}
+                </nuxt-link>
+              </li>
+            </ul>
+          </div>
         </aside>
       </div>
       <div v-else class="loading">Carregant...</div>
@@ -80,6 +82,11 @@ export default {
 .sidebar {
   padding-top: 2rem;
 
+  &-content {
+    position: sticky;
+    top: 5rem;
+  }
+
   h2 {
     font-size: 1.25rem;
     font-weight: bold;
@@ -89,6 +96,9 @@ export default {
     list-style: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
   a {
@@ -99,6 +109,7 @@ export default {
     border-radius: 0.25rem;
     padding: 0.25rem 0.5rem;
     transition: 0.25s ease;
+    font-size: 1.25rem;
 
     &:hover {
       background: $gray-200;

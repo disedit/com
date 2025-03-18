@@ -16,6 +16,7 @@
       <div class="artist-info">
         <div class="artist-picture">
           <img :src="image(artist)" alt="" />
+          <p>Segueix-nos</p>
           <ul class="artist-social">
             <li v-if="artist.acf.website">
               <a
@@ -25,16 +26,6 @@
                 rel="noopener"
               >
                 <fa :icon="['far', 'globe']" />
-              </a>
-            </li>
-            <li v-if="artist.acf.spotify">
-              <a
-                :href="artist.acf.spotify"
-                title="Spotify"
-                target="_blank"
-                rel="noopener"
-              >
-                <fa :icon="['fab', 'spotify']" />
               </a>
             </li>
             <li v-if="artist.acf.instagram">
@@ -67,6 +58,16 @@
                 <fa :icon="['fab', 'twitter']" />
               </a>
             </li>
+            <li v-if="artist.acf.bluesky">
+              <a
+                :href="artist.acf.bluesky"
+                title="Bluesky"
+                target="_blank"
+                rel="noopener"
+              >
+                <IconBluesky />
+              </a>
+            </li>
             <li v-if="artist.acf.facebook">
               <a
                 :href="artist.acf.facebook"
@@ -85,6 +86,40 @@
                 rel="noopener"
               >
                 <fa :icon="['fab', 'youtube']" />
+              </a>
+            </li>
+          </ul>
+
+          <p class="mt-4">On escoltar-nos</p>
+          <ul class="artist-social">
+            <li v-if="artist.acf.spotify">
+              <a
+                :href="artist.acf.spotify"
+                title="Spotify"
+                target="_blank"
+                rel="noopener"
+              >
+                <fa :icon="['fab', 'spotify']" />
+              </a>
+            </li>
+            <li v-if="artist.acf.applemusic">
+              <a
+                :href="artist.acf.applemusic"
+                title="Apple Music"
+                target="_blank"
+                rel="noopener"
+              >
+                <fa :icon="['fab', 'apple']" />
+              </a>
+            </li>
+            <li v-if="artist.acf.tidal">
+              <a
+                :href="artist.acf.tidal"
+                title="Tidal"
+                target="_blank"
+                rel="noopener"
+              >
+                <IconTidal />
               </a>
             </li>
           </ul>
@@ -257,6 +292,11 @@ export default {
       border-radius: 10% 10% 10% 0;
       object-fit: cover;
       object-position: center;
+    }
+
+    p {
+      margin-top: 1rem;
+      font-weight: bold;
     }
   }
 

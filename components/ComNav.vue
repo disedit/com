@@ -43,6 +43,25 @@
         <ul class="nav-menu-social">
           <li>
             <a
+              href="https://x.com/premisovidi"
+              title="Twitter"
+              target="_blank"
+              rel="noopener"
+              ><fa :icon="['fab', 'twitter']"
+            /></a>
+          </li>
+          <li>
+            <a
+              href="https://bsky.app/profile/premisovidi.bsky.social"
+              title="Bluesky"
+              target="_blank"
+              rel="noopener"
+            >
+              <IconBluesky />
+            </a>
+          </li>
+          <li>
+            <a
               href="https://www.instagram.com/eldelcom"
               title="Instagram"
               target="_blank"
@@ -61,20 +80,29 @@
           </li>
           <li>
             <a
-              href="https://twitter.com/premisovidi"
-              title="Twitter"
-              target="_blank"
-              rel="noopener"
-              ><fa :icon="['fab', 'twitter']"
-            /></a>
-          </li>
-          <li>
-            <a
               href="https://www.youtube.com/user/elCanaldelCOM"
               title="Youtube"
               target="_blank"
               rel="noopener"
               ><fa :icon="['fab', 'youtube']"
+            /></a>
+          </li>
+          <li>
+            <a
+              href="https://www.tiktok.com/@eldelcom"
+              title="TikTok"
+              target="_blank"
+              rel="noopener"
+              ><fa :icon="['fab', 'tiktok']"
+            /></a>
+          </li>
+          <li>
+            <a
+              href="https://open.spotify.com/user/31br4mkooax6idsa4hc7vbvwljme?si=7PXIH-bESxqkltj6NclVUg"
+              title="Spotify"
+              target="_blank"
+              rel="noopener"
+              ><fa :icon="['fab', 'spotify']"
             /></a>
           </li>
         </ul>

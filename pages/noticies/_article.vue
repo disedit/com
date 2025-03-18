@@ -73,7 +73,7 @@ export default {
 
   &-picture {
     position: sticky;
-    top: 14rem;
+    top: 16rem;
     z-index: 10000;
 
     img {
@@ -137,5 +137,11 @@ export default {
 ::v-deep img {
   max-width: 100%;
   height: auto;
+}
+</style>
+
+<style lang="scss">
+.wp-block-image img {
+  width: 100%;
 }
 </style>
