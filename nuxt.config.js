@@ -58,6 +58,9 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'apple-touch-icon', sizes: '30x30', href: '/favicon.png' },
     ],
+    script: [
+      { src: 'https://widgetv3.bandsintown.com/main.min.js', charset: 'utf-8' }
+    ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css

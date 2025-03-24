@@ -142,6 +142,10 @@
             allowfullscreen
           ></iframe>
         </div>
+        <div
+          v-if="artist.acf.bandsintown"
+          v-html="artist.acf.bandsintown"
+        />
       </div>
     </div>
   </main>
